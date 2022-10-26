@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "list#index"
-  resources :list, only: %i[index show new create] do
-    resources :bookmark, only: %i[new create]
+  root "lists#index"
+  resources :lists, only: %i[index show new create] do
+    resources :bookmarks, only: %i[new create]
   end
-  resources :bookmark, only: [:destroy]
+  resources :bookmarks, only: [:destroy]
 end

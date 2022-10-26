@@ -1,5 +1,3 @@
-<% image = @list.image_url.nil? || @list.image_url.empty? ? "https://images.unsplash.com/photo-1543536448-d209d2d13a1c" : @list.image_url %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image %>);">
   <div class="container">
     <h1><%= @list.name %></h1>
     <span class="position-absolute top-0 end-0 mt-4 me-4 badge bg-warning"><%= pluralize(@list.movies.size, "movie") %></span>
@@ -8,7 +6,6 @@
 <div class="container py-5">
   <div class="d-flex justify-content-between">
     <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Go back to lists'), lists_path, class: 'btn btn-primary mb-4 me-1' %>
-    <a href="#bookmark-form" class="btn btn-primary mb-4 ms-1"><i class="fa-solid fa-plus"></i> Add a movie</a>
   </div>
   <%= raw("<h2>You haven't saved any movies yet!</h2>") if @list.movies.empty? %>
 

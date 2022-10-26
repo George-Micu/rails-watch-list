@@ -1,17 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1574267432553-4b4628081c31);">
-  <div class="container">
-    <h1>Save any kind of movies</h1>
-  </div>
-</div>
+<h1>Save a movie</h1>
 <div class="container py-5">
   <div class="row">
     <div class="col-md-9">
-      <h2>My lists</h2>
+      <h2>All lists</h2>
       <div id="lists" class="row">
         <% @lists.each do |list| %>
           <div class="col-sm-6">
-            <% image = list.image_url.nil? || list.image_url.empty? ? "https://images.unsplash.com/photo-1543536448-d209d2d13a1c" : list.image_url %>
-            <div class="card-category mb-4" style="background-image: url(<%= image %>)">
               <%= link_to list_path(list) do %>
                 <%= list.name %>
               <% end %>
